@@ -5,9 +5,10 @@ announcement blog post
 
 from google.adk.agents import LlmAgent
 
+
 DEFAULT_MODEL = "gemini-2.5-flash"
 
-def create_blog_post_agent(model: str) -> LlmAgent:
+def create_blog_post_agent(model: str | None = None) -> LlmAgent:
     """
     Create a blog post agent that generates a draft for a product announcement blog post.
 
@@ -21,7 +22,7 @@ def create_blog_post_agent(model: str) -> LlmAgent:
         name="blog_post_agent",
         description="A junior copywriter that generates a draft for a product announcement blog post.",
         model=model or DEFAULT_MODEL,
-        system_prompt="You are a junior copywriter tasked with generating a draft for a product announcement blog post.",
+        instruction="You are a junior copywriter tasked with generating a draft for a product announcement blog post.",
     )
 
 __all__ = ["create_blog_post_agent"]
