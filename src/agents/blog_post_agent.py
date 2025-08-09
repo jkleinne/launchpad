@@ -23,3 +23,5 @@ def create_blog_post_agent(model: str) -> LlmAgent:
         model=model or DEFAULT_MODEL,
         system_prompt="You are a junior copywriter tasked with generating a draft for a product announcement blog post.",
     )
+
+__all__ = ["create_blog_post_agent"]
