@@ -41,9 +41,6 @@ Do not include any explanatory text before or after the JSON.
   "target_audience": "A specific group of people who would be the ideal users for this product."
 }
 
-### USER REQUEST ###
-`user_request`
-
 ### OUTPUT ###
 {
 """,
