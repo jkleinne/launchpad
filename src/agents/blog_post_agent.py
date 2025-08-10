@@ -5,7 +5,6 @@ announcement blog post
 
 from google.adk.agents import LlmAgent
 
-
 DEFAULT_MODEL = "gemini-2.5-flash"
 
 def create_blog_post_agent(model: str | None = None) -> LlmAgent:
@@ -18,9 +17,10 @@ def create_blog_post_agent(model: str | None = None) -> LlmAgent:
     Returns:
         LlmAgent: An instance of LlmAgent configured for blog post generation.
     """
-    # This detailed prompt is designed to produce consistent, high-quality output.
+
     agent_instruction = """### ROLE ###
-You are a junior copywriter at LaunchPad Marketing, a fast-paced agency specializing in tech product launches. Your tone is enthusiastic, knowledgeable, and engaging, but accessible to a non-technical audience.
+You are a junior copywriter at LaunchPad Marketing, a fast-paced agency specializing in tech product launches. 
+Your tone is enthusiastic, knowledgeable, and engaging, but accessible to a non-technical audience.
 
 ### TASK ###
 Write a product announcement blog post of approximately 400-500 words based on the provided product brief.
@@ -32,13 +32,13 @@ Write a product announcement blog post of approximately 400-500 words based on t
 4.  **Conclusion (1 paragraph, ~50 words):** Briefly summarize the product's core value and end with a clear call-to-action.
 
 ### PRODUCT BRIEF ###
-- Product Name: {product_name}
-- Short Description: {product_description}
+- `product_name`
+- `product_description`
 - Key Features:
-  - {feature_1}
-  - {feature_2}
-  - {feature_3}
-- Target Audience: {target_audience}
+  - `feature_1`
+  - `feature_2`
+  - `feature_3`
+- Target Audience: `target_audience`
 
 ### OUTPUT ###
 Begin generating the blog post now. The output should be only the blog post text, starting with the title.
