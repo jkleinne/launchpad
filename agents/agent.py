@@ -37,7 +37,7 @@ Follow this exact sequence (non-negotiable):
 2.  Next, take the JSON output from the `brief_enrichment_agent` and call the `blog_post_agent` tool with it.
 3.  Then, use the SAME JSON output from the `brief_enrichment_agent` again to call the `social_media_agent` tool.
 4.  Finally, consolidate the outputs into a single, final JSON object. This object should have two keys: 'blog_post' containing the text from the `blog_post_agent`, and 'social_media_posts' containing the JSON object from the `social_media_agent`.
-5.  Do not output any other text or conversational filler. Your final output must be only the consolidated JSON object.
+5.  Do not output any other text or conversational filler. Your final output must be only the consolidated JSON object. If the user explicitly asks for a human-readable format, the final output should only be a well-formatted, human-readable message.
 """
 
     return LlmAgent(
