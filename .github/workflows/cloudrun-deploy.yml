@@ -40,10 +40,9 @@ jobs:
 
     - name: Deploy to Cloud Run
       run: |
-        adk deploy cloud_run \                                                                                                                                     ─╯
+        adk deploy cloud_run \
           --project=${{ secrets.GCP_PROJECT_ID }} \
           --region=${{ vars.GCP_REGION }} \
           --service_name=${{ vars.SERVICE_NAME }} \
           --with_ui \
           agents
-        
