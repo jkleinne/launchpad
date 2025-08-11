@@ -3,7 +3,7 @@ root_agent entrypoint for ADK
 """
 from google.adk.agents import LlmAgent
 from google.adk.tools.agent_tool import AgentTool
-from src.agents import (
+from . import (
     create_blog_post_agent,
     create_brief_enrichment_agent,
     create_social_media_agent,
