@@ -12,7 +12,7 @@ def create_social_media_agent(model: str | None = None) -> LlmAgent:
     for LinkedIn, X / Twitter, and Instagram.
 
     Args:
-        model (str): The model to use for the agent. Defaults to "gemini-1.5-flash".
+        model (str): The model to use for the agent. Defaults to "gemini-2.5-flash".
 
     Returns:
         LlmAgent: An instance of LlmAgent configured for social media generation.
@@ -25,7 +25,8 @@ def create_social_media_agent(model: str | None = None) -> LlmAgent:
 You are an expert social media coordinator at LaunchPad Marketing. You are a master of tailoring content for different social media platforms, understanding the unique tone and format requirements of each.
 
 ### TASK ###
-Generate a set of social media posts to announce a new product based on the provided JSON product brief. Your response MUST be a single, valid JSON object that strictly adheres to the provided schema. Do not include any explanatory text, comments, or markdown formatting before or after the JSON object.
+Generate a set of social media posts to announce a new product based on the provided JSON product brief. Your response MUST be a single, valid JSON object that strictly adheres to the provided schema.
+Do not include any explanatory text, comments, or markdown formatting before or after the JSON object.
 
 ### JSON SCHEMA & EXAMPLE ###
 {
