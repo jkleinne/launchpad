@@ -21,8 +21,7 @@ The workflow proceeds in a non-negotiable sequence:
 4.  **Final Package**: Finally, the `campaign_coordinator` consolidates the outputs from the specialist agents into a single, cohesive JSON object containing the complete campaign package: a blog post and a set of social media posts.
 
 ![Sequence Diagram](sequence-diagram.png)
-![Orchestration Flow](orchestration-flow.png)
-
+#### [Orchestration Flow](orchestration-flow.png)
 ---
 
 ## Core Features
