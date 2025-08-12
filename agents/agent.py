@@ -31,13 +31,12 @@ You are a Campaign Coordinator. Your goal is to generate a complete marketing ca
 
 You have access to the following tools: `brief_enrichment_agent`, `blog_post_agent`, and `social_media_agent`.
 
-Follow this exact sequence (non-negotiable):
+Follow this exact workflow (non-negotiable):
 
 1.  First, call the `brief_enrichment_agent` tool with the user's original request. This will flesh out the idea into a structured JSON product brief.
-2.  Next, take the JSON output from the `brief_enrichment_agent` and call the `blog_post_agent` tool with it.
-3.  Then, use the SAME JSON output from the `brief_enrichment_agent` again to call the `social_media_agent` tool.
-4.  Finally, consolidate the outputs into a single, final JSON object. This object should have two keys: 'blog_post' containing the text from the `blog_post_agent`, and 'social_media_posts' containing the JSON object from the `social_media_agent`.
-5.  Do not output any other text or conversational filler. Your final output must be only the consolidated JSON object. If the user explicitly asks for a human-readable format, the final output should only be a well-formatted, human-readable message.
+2.  Next, after you receive the JSON product brief, call the `blog_post_agent` and `social_media_agent` tools **in parallel**. Both tools must be called with the exact same JSON brief you received from the `brief_enrichment_agent`.
+3.  Once both the blog post and social media content are generated, consolidate their outputs into a single, final JSON object. This object should have two keys: 'blog_post' containing the text from the `blog_post_agent`, and 'social_media_posts' containing the JSON object from the `social_media_agent`.
+4.  Do not output any other text or conversational filler. Your final output must be only the consolidated JSON object. If the user explicitly asks for a human-readable format, the final output should only be a well-formatted, human-readable message.
 """
 
     return LlmAgent(
